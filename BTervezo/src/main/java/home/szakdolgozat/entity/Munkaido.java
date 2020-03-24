@@ -15,6 +15,10 @@ public class Munkaido {
 	private String munkaidoNev;
 	private Double munkaido;
 	
+	public Munkaido() {
+		
+	}
+	
 	public String getMunkaidoNev() {
 		return munkaidoNev;
 	}

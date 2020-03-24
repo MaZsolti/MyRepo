@@ -18,6 +18,10 @@ public class MTerulet {
 	private Munkarend munkarend;
 	private List<Muszak> muszakok;
 	private List<Munkakor> munkakorok;
+	
+	public MTerulet() {
+		
+	}
 
 	public int getId() {
 		return id;

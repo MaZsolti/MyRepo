@@ -16,6 +16,12 @@ public class Felhasznalo extends Dolgozo{
 	private String felhaszanlonev;
 	private String jelszo;
 
+	
+	
+	public Felhasznalo() {
+		
+	}
+
 	public int getId() {
 		return id;
 	}

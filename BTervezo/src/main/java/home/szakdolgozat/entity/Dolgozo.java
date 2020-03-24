@@ -9,7 +9,10 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Dolgozo {
-
+	
+	public Dolgozo() {
+		
+	}
 	@Id
 	@GeneratedValue
 	private int id;
@@ -23,11 +26,9 @@ public class Dolgozo {
 	private boolean tulora = true;
 	private boolean hetvege = false;
 	private int szabadsag;
-	private int felhasznaltSzabadfsag;
+	private int felhasznaltSzabadsag;
 	private int kivehetoSzabadság;
 	private int jogosultsag;
-	
-	
 	
 	public int getJogosultsag() {
 		return jogosultsag;
@@ -84,10 +85,10 @@ public class Dolgozo {
 		this.szabadsag = szabadsag;
 	}
 	public int getFelhasznaltSzabadfsag() {
-		return felhasznaltSzabadfsag;
+		return felhasznaltSzabadsag;
 	}
-	public void setFelhasznaltSzabadfsag(int felhasznaltSzabadfsag) {
-		this.felhasznaltSzabadfsag = felhasznaltSzabadfsag;
+	public void setFelhasznaltSzabadfsag(int felhasznaltSzabadsag) {
+		this.felhasznaltSzabadsag = felhasznaltSzabadsag;
 	}
 	public int getKivehetoSzabadság() {
 		return kivehetoSzabadság;
@@ -95,6 +96,8 @@ public class Dolgozo {
 	public void setKivehetoSzabadság(int kivehetoSzabadság) {
 		this.kivehetoSzabadság = kivehetoSzabadság;
 	}
+	
+	
 	
 	
 }

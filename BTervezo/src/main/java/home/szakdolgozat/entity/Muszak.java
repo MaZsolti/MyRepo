@@ -14,6 +14,12 @@ public class Muszak {
 	
 	private int muszak;
 	private String nev;
+	
+	
+
+	public Muszak() {
+		
+	}
 
 	public int getId() {
 		return id;

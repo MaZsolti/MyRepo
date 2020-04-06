@@ -17,7 +17,27 @@ public class Dolgozo {
 	@GeneratedValue
 	private int id;
 
-	private String nev;
+	private String vezeteknev;
+	private String keresztnev;
+	
+	public String getVezeteknev() {
+		return vezeteknev;
+	}
+	public void setVezeteknev(String vezeteknev) {
+		this.vezeteknev = vezeteknev;
+	}
+	public String getKeresztnev() {
+		return keresztnev;
+	}
+	public void setKeresztnev(String keresztnev) {
+		this.keresztnev = keresztnev;
+	}
+	public int getFelhasznaltSzabadsag() {
+		return felhasznaltSzabadsag;
+	}
+	public void setFelhasznaltSzabadsag(int felhasznaltSzabadsag) {
+		this.felhasznaltSzabadsag = felhasznaltSzabadsag;
+	}
 	private Munkakor munkakor;
 	private Munkaido munkaido;
 	
@@ -43,10 +63,10 @@ public class Dolgozo {
 		this.id = id;
 	}
 	public String getNev() {
-		return nev;
+		return vezeteknev;
 	}
 	public void setNev(String nev) {
-		this.nev = nev;
+		this.vezeteknev = nev;
 	}
 	public Munkakor getMunkakor() {
 		return munkakor;

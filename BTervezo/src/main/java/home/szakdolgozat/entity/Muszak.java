@@ -2,7 +2,6 @@ package home.szakdolgozat.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -11,13 +10,14 @@ public class Muszak {
 	@Id
 	@GeneratedValue
 	private int id;
+	private String muszak;
+	private int tol;
+	private int ig;
 	
-	private int muszak;
-	private String nev;
 	
 	
 
-	public Muszak() {
+	Muszak() {
 		
 	}
 
@@ -29,21 +29,31 @@ public class Muszak {
 		this.id = id;
 	}
 
-	public int getMuszak() {
+	public String getMuszak() {
 		return muszak;
 	}
 
-	public void setMuszak(int muszak) {
+	public void setMuszak(String muszak) {
 		this.muszak = muszak;
 	}
 
-	public String getNev() {
-		return nev;
+	public int getTol() {
+		return tol;
 	}
 
-	public void setNev(String nev) {
-		this.nev = nev;
+	public void setTol(int tol) {
+		this.tol = tol;
 	}
+
+	public int getIg() {
+		return ig;
+	}
+
+	public void setIg(int ig) {
+		this.ig = ig;
+	}
+
+	
 	
 	
 }

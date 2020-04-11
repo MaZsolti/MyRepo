@@ -1,11 +1,19 @@
 package home.szakdolgozat.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Muszak {
+	
+private Muszak () {
+		
+	}
 	
 	@Id
 	@GeneratedValue
@@ -14,13 +22,9 @@ public class Muszak {
 	private int tol;
 	private int ig;
 	
+	@ManyToMany
+	private List<MTerulet> mteruletek = new ArrayList<MTerulet>();
 	
-	
-
-	Muszak() {
-		
-	}
-
 	public int getId() {
 		return id;
 	}
@@ -53,7 +57,20 @@ public class Muszak {
 		this.ig = ig;
 	}
 
-	
+	public List<MTerulet> getMteruletek() {
+		return mteruletek;
+	}
+
+	public void setMteruletek(List<MTerulet> mteruletek) {
+		this.mteruletek = mteruletek;
+	}
+
+	@Override
+	public String toString() {
+		final int maxLen = 10;
+		return "Muszak [id=" + id + ", muszak=" + muszak + ", tol=" + tol + ", ig=" + ig + ", mteruletek="
+				+ (mteruletek != null ? mteruletek.subList(0, Math.min(mteruletek.size(), maxLen)) : null) + "]";
+	}
 	
 	
 }

@@ -3,9 +3,9 @@ package home.szakdolgozat.repository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import home.szakdolgozat.entity.MTerulet;
+import home.szakdolgozat.entity.Muszak;
 
 @Repository
-public interface MTeruletRepository extends CrudRepository<MTerulet, Integer> {
+public interface MuszakRepository extends CrudRepository<Muszak, Integer> {
 
 }

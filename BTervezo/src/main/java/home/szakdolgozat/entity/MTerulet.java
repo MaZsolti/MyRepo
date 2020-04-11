@@ -1,28 +1,33 @@
 package home.szakdolgozat.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class MTerulet {
+	
+	private MTerulet () {
+		
+	}
 	
 	@Id
 	@GeneratedValue
 	private int id;
 	
 	private String munkaterulet;
+	@ManyToOne
 	private Munkarend munkarend;
-	private List<Muszak> muszakok;
-	private List<Munkakor> munkakorok;
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "mteruletek")
+	private List<Muszak> muszakok = new ArrayList<Muszak>();
+	//private List<Munkakor> munkakorok;
 	
-	public MTerulet() {
-		
-	}
-
 	public int getId() {
 		return id;
 	}
@@ -30,7 +35,6 @@ public class MTerulet {
 	public void setId(int id) {
 		this.id = id;
 	}
-
 	public String getMunkaterulet() {
 		return munkaterulet;
 	}
@@ -55,13 +59,21 @@ public class MTerulet {
 		this.muszakok = muszakok;
 	}
 
-	public List<Munkakor> getMunkakorok() {
-		return munkakorok;
+	@Override
+	public String toString() {
+		final int maxLen = 10;
+		return "MTerulet [id=" + id + ", munkaterulet=" + munkaterulet + ", munkarend=" + munkarend + ", muszakok="
+				+ (muszakok != null ? muszakok.subList(0, Math.min(muszakok.size(), maxLen)) : null) + "]";
 	}
 
-	public void setMunkakorok(List<Munkakor> munkakorok) {
-		this.munkakorok = munkakorok;
-	}
+//	public List<Munkakor> getMunkakorok() {
+//		return munkakorok;
+//	}
+//
+//	public void setMunkakorok(List<Munkakor> munkakorok) {
+//		this.munkakorok = munkakorok;
+//	}
+
 	
 	
 	

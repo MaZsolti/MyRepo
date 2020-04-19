@@ -12,52 +12,65 @@ import javax.persistence.OneToMany;
 @Entity
 public class Munkarend {
 	
-private Munkarend () {
+public Munkarend () {
 		
 	}
 	
 	@Id
 	@GeneratedValue
-	private int id;
+	private Long id;
 	
-	private Integer munkarend;
-	private String nev;
+	private String munkarend;
+	private int idotartam;
+	
 	@OneToMany(cascade =CascadeType.ALL, mappedBy ="munkarend")
 	private List<MTerulet> mteruletek = new ArrayList<MTerulet>();
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getMunkarend() {
+		return munkarend;
+	}
+
+	public void setMunkarend(String munkarend) {
+		this.munkarend = munkarend;
+	}
 	
+	
+
+	public int getIdotartam() {
+		return idotartam;
+	}
+
+	public void setIdotartam(int idotartam) {
+		this.idotartam = idotartam;
+	}
+
 	public List<MTerulet> getMteruletek() {
 		return mteruletek;
 	}
+
 	public void setMteruletek(List<MTerulet> mteruletek) {
 		this.mteruletek = mteruletek;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	
-	
-	public Integer getMunkarend() {
-		return munkarend;
-	}
-	public void setMunkarend(Integer munkarend) {
-		this.munkarend = munkarend;
-	}
-	public String getNev() {
-		return nev;
-	}
-	public void setNev(String nev) {
-		this.nev = nev;
-	}
+
 	@Override
 	public String toString() {
 		final int maxLen = 10;
-		return "Munkarend [id=" + id + ", munkarend=" + munkarend + ", nev=" + nev + ", mteruletek="
+		return "Munkarend [id=" + id + ", munkarend=" + munkarend + ", idotartam=" + idotartam + ", mteruletek="
 				+ (mteruletek != null ? mteruletek.subList(0, Math.min(mteruletek.size(), maxLen)) : null) + "]";
 	}
+
+	
+
+	
+	
 	
 	
 }

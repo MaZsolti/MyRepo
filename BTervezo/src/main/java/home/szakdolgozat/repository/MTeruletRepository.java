@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import home.szakdolgozat.entity.MTerulet;
 
 @Repository
-public interface MTeruletRepository extends CrudRepository<MTerulet, Integer> {
+public interface MTeruletRepository extends CrudRepository<MTerulet, Long> {
 
 }

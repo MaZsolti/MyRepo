@@ -12,35 +12,38 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class MTerulet {
-	
-	private MTerulet () {
-		
+
+	private MTerulet() {
+
 	}
-	
+
 	@Id
 	@GeneratedValue
-	private int id;
-	
-	private String munkaterulet;
+	private Long id;
+
+	private String mterulet;
 	@ManyToOne
 	private Munkarend munkarend;
-	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "mteruletek")
+	@ManyToMany
 	private List<Muszak> muszakok = new ArrayList<Muszak>();
-	//private List<Munkakor> munkakorok;
-	
-	public int getId() {
+
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "mteruletek")
+	private List<Munkakor> munkakorok = new ArrayList<Munkakor>();
+
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getMunkaterulet() {
-		return munkaterulet;
+
+	public String getMterulet() {
+		return mterulet;
 	}
 
-	public void setMunkaterulet(String munkaterulet) {
-		this.munkaterulet = munkaterulet;
+	public void setMterulet(String mterulet) {
+		this.mterulet = mterulet;
 	}
 
 	public Munkarend getMunkarend() {
@@ -59,24 +62,26 @@ public class MTerulet {
 		this.muszakok = muszakok;
 	}
 
+	public List<Munkakor> getMunkakorok() {
+		return munkakorok;
+	}
+
+	public void setMunkakorok(List<Munkakor> munkakorok) {
+		this.munkakorok = munkakorok;
+	}
+
 	@Override
 	public String toString() {
 		final int maxLen = 10;
-		return "MTerulet [id=" + id + ", munkaterulet=" + munkaterulet + ", munkarend=" + munkarend + ", muszakok="
-				+ (muszakok != null ? muszakok.subList(0, Math.min(muszakok.size(), maxLen)) : null) + "]";
+		return "MTerulet [id=" + id + ", mterulet=" + mterulet + ", munkarend=" + munkarend + ", muszakok="
+				+ (muszakok != null ? muszakok.subList(0, Math.min(muszakok.size(), maxLen)) : null) + ", munkakorok="
+				+ (munkakorok != null ? munkakorok.subList(0, Math.min(munkakorok.size(), maxLen)) : null) + "]";
 	}
 
-//	public List<Munkakor> getMunkakorok() {
-//		return munkakorok;
-//	}
-//
-//	public void setMunkakorok(List<Munkakor> munkakorok) {
-//		this.munkakorok = munkakorok;
-//	}
+	
 
 	
 	
-	
-	
-	
-}
+	}
+
+

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import home.szakdolgozat.entity.Munkarend;
 
 @Repository
-public interface MunkarendRepository extends CrudRepository<Munkarend, Integer> {
+public interface MunkarendRepository extends CrudRepository<Munkarend, Long> {
 
 }

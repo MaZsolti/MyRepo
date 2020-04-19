@@ -1,7 +1,5 @@
 package home.szakdolgozat.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +15,5 @@ public class MuszakService {
 	public void mentes(Muszak muszak) {
 		mr.save(muszak);
 	}
-	public List<Muszak> osszesMuszak(){
-		return (List<Muszak>) mr.findAll();
-	}
+	
 }

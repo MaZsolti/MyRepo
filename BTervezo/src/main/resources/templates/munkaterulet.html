@@ -1,0 +1,22 @@
+<html lang="hu" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/nav">
+
+<body>
+
+	<form action="dolgozo" class="form-group mt-2 mb-4 shadow p-3"
+		layout:fragment="munkaterulet">
+		<h3>Munkaterület hozzáadása</h3>
+		<div class="form-row">
+			<div class="col">
+				<input type="text" class="form-control mt-2 mb-4"
+					placeholder="Munkaterület:" id="munkaterulet" name="munkaterulet">
+			</div>
+
+		</div>
+
+		<button class="btn btn-dark" type="submit">Hozzáadás</button>
+	</form>
+</body>
+
+</html>

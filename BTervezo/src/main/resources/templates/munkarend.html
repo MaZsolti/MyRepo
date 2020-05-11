@@ -1,34 +1,31 @@
-<html lang="hu" xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorator="layouts/nav">
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<script th:replace="/layouts/nav :: navElement1"></script>
 
 <body>
+    <script th:replace="/layouts/nav :: navElement2"></script>
+    <div class="container" th:fragment="munkarend">
+        <div class="row">
+            <div class="col">
+                <form action="munkarend" th:object="${munkarend}" class="form-group shadow p-3 " method="POST">
+                    <h3>Munkarend hozzáadása</h3>
+                    <div class="form-group row">
 
+                        <div class="col">
+                            <input type="text" th:field="*{munkarend}" class="form-control mt-2 mb-4" placeholder="Munkarend:" id="" name="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
 
-
-
-	<form action="munkarend" th:object="${munkarend}" class="form-group mt-2 mb-4 shadow p-3 "
-		method="POST" layout:fragment="munkarend">
-		<h3>Munkarend hozzáadása</h3>
-		<div class="form-group row">
-			
-			<div class="col">
-				<input type="text" th:field="*{munkarend}"
-					class="form-control mt-2 mb-4" placeholder="Munkarend:" id=""
-					name="">
-			</div>
-		</div>
-		<div class="form-group row">
-			
-			<div class="col">
-				<input type="number" th:field="*{idotartam}"
-					class="form-control mt-2 mb-4" placeholder="A munkarend időtartama:" id=""
-					name="" min="2" max="12">
-			</div>
-		</div>
-
-		<button class="btn btn-dark" type="submit">Hozzáadás</button>
-	</form>
-
+                        <div class="col">
+                            <input type="number" th:field="*{idotartam}" class="form-control mt-2 mb-4" placeholder="A munkarend időtartama:" id="" name="" min="2" max="12">
+                        </div>
+                    </div>
+                    <button class="btn btn-dark" type="submit">Hozzáadás</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>

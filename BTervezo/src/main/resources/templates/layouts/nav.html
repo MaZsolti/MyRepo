@@ -1,81 +1,43 @@
 <!DOCTYPE html>
-<html lang="hu" xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="hu" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
-<head>
-<meta charset="UTF-8">
+<head th:fragment="navElement1">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Bootstrap CSS -->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-	crossorigin="anonymous">
-<!--Js -->
-<title>Adatbevitel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!--Js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js " integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js " integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 " crossorigin="anonymous "></script>
+    <title>Adatbevitel</title>
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top mb-5">
-		<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top mb-5" th:fragment="navElement2">
+        <div class=" container">
 
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarNav" aria-controls="navbarNav"
-				aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarNav " aria-controls="navbarNav " aria-expanded="false " aria-label="Toggle navigation ">
+				<span class="navbar-toggler-icon "></span>
 				<!--hamburgerikon-->
 			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<!--hamburgernél nyitódik csukódik be-->
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a
-						class="nav-link text-light font-weight-bold" href="munkaido">Munkaidő</a>
-					</li>
-					<li class="nav-item"><a
-						class="nav-link text-light font-weight-bold" href="muszak">Műszak</a>
-					</li>
-					<li class="nav-item"><a
-						class="nav-link text-light font-weight-bold" href="munkarend">Munkarend</a>
-					</li>
-					<li class="nav-item"><a
-						class="nav-link text-light font-weight-bold" href="munkakor">Munkakör</a>
-					</li>
-					<li class="nav-item"><a
-						class="nav-link text-light font-weight-bold" href="munkaterulet">Munkaterület</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<div class="container">
-
-		<div class="row">
-
-			<div class="col" layout:fragment="munkaido"></div>
-			<div class="col" layout:fragment="muszak"></div>
-
-			<div class="col" layout:fragment="munkarend"></div>
-
-			<div class="col" layout:fragment="munkakor"></div>
-
-			<div class="col" layout:fragment="munkaterulet">
-
-
-			</div>
-		</div>
-	</div>
-
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js "
-		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n "
-		crossorigin="anonymous "></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js "
-		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo "
-		crossorigin="anonymous "></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js "
-		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 "
-		crossorigin="anonymous "></script>
+            <div class="collapse navbar-collapse " id="navbarNav ">
+                <!--hamburgernél nyitódik csukódik be-->
+                <ul class="navbar-nav ml-auto ">
+                    <li class="nav-item "><a class="nav-link text-light font-weight-bold " id="munkaido " href="munkaido ">Munkaidő</a>
+                    </li>
+                    <li class="nav-item "><a class="nav-link text-light font-weight-bold " id="muszak " href="muszak ">Műszak</a>
+                    </li>
+                    <li class="nav-item "><a class="nav-link text-light font-weight-bold " id="munkarend " href="munkarend ">Munkarend</a>
+                    </li>
+                    <li class="nav-item "><a class="nav-link text-light font-weight-bold " id="munkakor " href="munkakor ">Munkakör</a>
+                    </li>
+                    <li class="nav-item "><a class="nav-link text-light font-weight-bold " id="munkaterulet " href="munkaterulet ">Munkaterület</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </body>
 
 </html>

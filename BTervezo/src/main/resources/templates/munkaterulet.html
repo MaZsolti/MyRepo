@@ -1,22 +1,26 @@
-<html lang="hu" xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	layout:decorator="layouts/nav">
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<script th:replace="/layouts/nav :: navElement1"></script>
 
 <body>
+    <script th:replace="/layouts/nav :: navElement2"></script>
+    <div class="container" th:fragment="munkaterulet">
+        <div class="row">
+            <div class="col">
+                <form action="munkaterulet" class="form-group shadow p-3" method="POST">
+                    <h3>Munkaterület hozzáadása</h3>
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" class="form-control mt-2 mb-4" placeholder="Munkaterület:" id="munkaterulet" name="munkaterulet">
+                        </div>
 
-	<form action="munkaterulet" class="form-group mt-2 mb-4 shadow p-3"
-		layout:fragment="munkaterulet" method="POST">
-		<h3>Munkaterület hozzáadása</h3>
-		<div class="form-row">
-			<div class="col">
-				<input type="text" class="form-control mt-2 mb-4"
-					placeholder="Munkaterület:" id="munkaterulet" name="munkaterulet">
-			</div>
+                    </div>
 
-		</div>
-
-		<button class="btn btn-dark" type="submit">Hozzáadás</button>
-	</form>
+                    <button class="btn btn-dark" type="submit">Hozzáadás</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

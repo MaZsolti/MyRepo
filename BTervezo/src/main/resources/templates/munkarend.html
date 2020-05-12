@@ -4,10 +4,10 @@
 
 <body>
     <script th:replace="/layouts/nav :: navElement2"></script>
-    <div class="container" th:fragment="munkarend">
+    <div class="container">
         <div class="row">
             <div class="col">
-                <form action="munkarend" th:object="${munkarend}" class="form-group shadow p-3 " method="POST">
+                <form action="munkarend" th:object="${munkarend}" class="form-group" method="POST">
                     <h3>Munkarend hozzáadása</h3>
                     <div class="form-group row">
 

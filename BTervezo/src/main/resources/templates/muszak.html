@@ -4,10 +4,10 @@
 
 <body>
     <script th:replace="/layouts/nav :: navElement2"></script>
-    <div class="container" th:fragment="muszak">
+    <div class="container">
         <div class="row">
             <div class="col">
-                <form action="muszak" th:object="${muszak}" method="POST" class="form-group shadow p-3">
+                <form action="muszak" th:object="${muszak}" method="POST" class="form-group">
                     <h3>Műszak hozzáadása</h3>
                     <div class="form-row">
                         <div class="col">

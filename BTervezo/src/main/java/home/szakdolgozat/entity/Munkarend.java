@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -21,8 +22,10 @@ public Munkarend () {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String munkarend;
-	private int idotartam;
+	private String mrend;
+	
+	@ManyToOne
+	private Munkaido mido;
 	
 	@OneToMany(cascade =CascadeType.ALL, mappedBy ="munkarend")
 	private List<MTerulet> mteruletek = new ArrayList<MTerulet>();
@@ -35,22 +38,20 @@ public Munkarend () {
 		this.id = id;
 	}
 
-	public String getMunkarend() {
-		return munkarend;
+	public String getMrend() {
+		return mrend;
 	}
 
-	public void setMunkarend(String munkarend) {
-		this.munkarend = munkarend;
-	}
-	
-	
-
-	public int getIdotartam() {
-		return idotartam;
+	public void setMrend(String mrend) {
+		this.mrend = mrend;
 	}
 
-	public void setIdotartam(int idotartam) {
-		this.idotartam = idotartam;
+	public Munkaido getMido() {
+		return mido;
+	}
+
+	public void setMido(Munkaido mido) {
+		this.mido = mido;
 	}
 
 	public List<MTerulet> getMteruletek() {
@@ -64,14 +65,24 @@ public Munkarend () {
 	@Override
 	public String toString() {
 		final int maxLen = 10;
-		return "Munkarend [id=" + id + ", munkarend=" + munkarend + ", idotartam=" + idotartam + ", mteruletek="
+		return "Munkarend [id=" + id + ", mrend=" + mrend + ", mido=" + mido + ", mteruletek="
 				+ (mteruletek != null ? mteruletek.subList(0, Math.min(mteruletek.size(), maxLen)) : null) + "]";
 	}
 
 	
+	
+	
+
+}
+
+	
+
+	
+
+	
 
 	
 	
 	
 	
-}
+

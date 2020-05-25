@@ -7,15 +7,20 @@
     <div class="container bg-light col-10 col-sm-9 col-md-8 col-lg-7 col-xl-6 mx-auto rounded-bottom text-center">
         <div class="row">
             <div class="col">
-                <form action="munkakor" th:object="${munkakor}" method="POST" class="form-group">
-                    <h3>Munkakör hozzáadása</h3>
-                    <div class="form-row">
+                <form action="munkarend" th:object="${munkarend}" class="form-group" method="POST">
+                    <h3>Munkarend hozzáadása</h3>
+                    <div class="form-group row">
+
                         <div class="col">
-                            <input type="text" th:field="*{mukor}" class="form-control mt-2 mb-4" placeholder="Munkakör:" id="munkakor" name="munkakor">
+                            <input type="text" th:field="*{munkarend}" class="form-control mt-2 mb-4" placeholder="Munkarend:" id="" name="">
                         </div>
-
                     </div>
+                    <div class="form-group row">
 
+                        <div class="col">
+                            <input type="number" th:field="*{idotartam}" class="form-control mt-2 mb-4" placeholder="A munkarend időtartama:" id="" name="" min="2" max="12">
+                        </div>
+                    </div>
                     <button class="btn btn-dark" type="submit">Hozzáadás</button>
                 </form>
             </div>

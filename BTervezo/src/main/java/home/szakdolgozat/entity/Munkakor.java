@@ -21,7 +21,7 @@ public class Munkakor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String munkakor;
+	private String mukor;
 	
 	@ManyToMany
 	private List<MTerulet> mteruletek = new ArrayList<MTerulet>();
@@ -37,15 +37,13 @@ public class Munkakor {
 		this.id = id;
 	}
 
-	public String getMunkakor() {
-		return munkakor;
+	public String getMukor() {
+		return mukor;
 	}
 
-	public void setMunkakor(String munkakor) {
-		this.munkakor = munkakor;
+	public void setMukor(String mukor) {
+		this.mukor = mukor;
 	}
-	
-	
 
 	public List<MTerulet> getMteruletek() {
 		return mteruletek;
@@ -66,16 +64,12 @@ public class Munkakor {
 	@Override
 	public String toString() {
 		final int maxLen = 10;
-		return "Munkakor [id=" + id + ", munkakor=" + munkakor + ", mteruletek="
+		return "Munkakor [id=" + id + ", mukor=" + mukor + ", mteruletek="
 				+ (mteruletek != null ? mteruletek.subList(0, Math.min(mteruletek.size(), maxLen)) : null)
 				+ ", dolgozok=" + (dolgozok != null ? dolgozok.subList(0, Math.min(dolgozok.size(), maxLen)) : null)
 				+ "]";
 	}
 
-	
-
-	
-	
 	
 	
 

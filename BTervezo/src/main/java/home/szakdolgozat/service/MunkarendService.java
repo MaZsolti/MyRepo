@@ -14,8 +14,15 @@ public class MunkarendService {
 	@Autowired
 	private MunkarendRepository mrr;
 	
-	public void mentes(Munkarend munkarend) {
-		mrr.save(munkarend);
+	
+	
+	
+	public void mentes(Munkarend munkarend, Long mido_id) {
+				
+			mrr.save(munkarend);
+		
+				
+		
 	}
 	public List<Munkarend> osszesMunkarend(){
 		return (List<Munkarend>) mrr.findAll();

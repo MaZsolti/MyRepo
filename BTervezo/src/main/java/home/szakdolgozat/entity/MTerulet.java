@@ -22,7 +22,7 @@ public class MTerulet {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String mterulet;
+	private String munkaterulet;
 	@ManyToOne
 	private Munkarend munkarend;
 	@ManyToMany
@@ -39,12 +39,12 @@ public class MTerulet {
 		this.id = id;
 	}
 
-	public String getMterulet() {
-		return mterulet;
+	public String getMunkaterulet() {
+		return munkaterulet;
 	}
 
-	public void setMterulet(String mterulet) {
-		this.mterulet = mterulet;
+	public void setMunkaterulet(String munkaterulet) {
+		this.munkaterulet = munkaterulet;
 	}
 
 	public Munkarend getMunkarend() {
@@ -74,11 +74,12 @@ public class MTerulet {
 	@Override
 	public String toString() {
 		final int maxLen = 10;
-		return "MTerulet [id=" + id + ", mterulet=" + mterulet + ", munkarend=" + munkarend + ", muszakok="
+		return "MTerulet [id=" + id + ", munkaterulet=" + munkaterulet + ", munkarend=" + munkarend + ", muszakok="
 				+ (muszakok != null ? muszakok.subList(0, Math.min(muszakok.size(), maxLen)) : null) + ", munkakorok="
 				+ (munkakorok != null ? munkakorok.subList(0, Math.min(munkakorok.size(), maxLen)) : null) + "]";
 	}
 
+	
 	
 
 	

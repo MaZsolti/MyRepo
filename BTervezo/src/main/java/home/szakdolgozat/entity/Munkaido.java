@@ -1,6 +1,5 @@
 package home.szakdolgozat.entity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -21,25 +20,28 @@ public class Munkaido {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private Integer munkaido;
+	private Integer idotartam;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "munkaido")
-	private List<Dolgozo> dolgozok = new ArrayList<Dolgozo>();
+	private List<Dolgozo> dolgozok;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "mido")
+	private List<Munkarend> munkarendek;
 
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public Integer getMunkaido() {
-		return munkaido;
+	public Integer getIdotartam() {
+		return idotartam;
 	}
 
-	public void setMunkaido(int munkaido) {
-		this.munkaido = munkaido;
+	public void setIdotartam(Integer idotartam) {
+		this.idotartam = idotartam;
 	}
 
 	public List<Dolgozo> getDolgozok() {
@@ -50,14 +52,21 @@ public class Munkaido {
 		this.dolgozok = dolgozok;
 	}
 
+	public List<Munkarend> getMunkarendek() {
+		return munkarendek;
+	}
+
+	public void setMunkarendek(List<Munkarend> munkarendek) {
+		this.munkarendek = munkarendek;
+	}
+
 	@Override
 	public String toString() {
 		final int maxLen = 10;
-		return "Munkaido [id=" + id + ", munkaido=" + munkaido + ", dolgozok="
-				+ (dolgozok != null ? dolgozok.subList(0, Math.min(dolgozok.size(), maxLen)) : null) + "]";
+		return "Munkaido [id=" + id + ", idotartam=" + idotartam + ", dolgozok="
+				+ (dolgozok != null ? dolgozok.subList(0, Math.min(dolgozok.size(), maxLen)) : null) + ", munkarendek="
+				+ (munkarendek != null ? munkarendek.subList(0, Math.min(munkarendek.size(), maxLen)) : null) + "]";
 	}
-
-	
 
 	
 	

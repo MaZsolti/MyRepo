@@ -24,7 +24,7 @@ public class Muszak {
 	private int tol;
 	private int ig;
 
-	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "muszakok")
+	@ManyToMany
 	private List<MTerulet> mteruletek = new ArrayList<MTerulet>();
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "muszakok")
 	private List<Dolgozo> dolgozok = new ArrayList<Dolgozo>();

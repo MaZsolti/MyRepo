@@ -1,5 +1,7 @@
 package home.szakdolgozat.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,11 @@ public class MTeruletService {
 	@Autowired
 	private MTeruletRepository mtr;
 	
-	public void mentes(MTerulet mterulet) {
+	public void mentes(MTerulet mterulet, Long munkarend_id) {
 		mtr.save(mterulet);
+	}
+	public List<MTerulet> munkateruletLista(){
+		return (List<MTerulet>)mtr.findAll();
+		
 	}
 }

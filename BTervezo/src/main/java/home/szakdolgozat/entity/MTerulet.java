@@ -14,7 +14,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class MTerulet {
 
-	private MTerulet() {
+	public MTerulet() {
 
 	}
 
@@ -25,7 +25,7 @@ public class MTerulet {
 	private String munkaterulet;
 	@ManyToOne
 	private Munkarend munkarend;
-	@ManyToMany
+	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "mteruletek")
 	private List<Muszak> muszakok = new ArrayList<Muszak>();
 
 	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "mteruletek")

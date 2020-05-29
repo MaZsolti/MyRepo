@@ -24,7 +24,7 @@ public class MunkarendService {
 				
 		
 	}
-	public List<Munkarend> osszesMunkarend(){
+	public List<Munkarend> munkarendLista(){
 		return (List<Munkarend>) mrr.findAll();
 	}
 }

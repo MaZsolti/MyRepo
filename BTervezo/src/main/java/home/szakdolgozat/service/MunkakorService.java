@@ -1,5 +1,7 @@
 package home.szakdolgozat.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,4 +17,9 @@ public class MunkakorService {
 	public void mentes(Munkakor munkakor) {
 		mr.save(munkakor);
 	}
+	public List<Munkakor> munkakorLista(){
+		return (List<Munkakor>)mr.findAll();
+		
+	}
+	
 }

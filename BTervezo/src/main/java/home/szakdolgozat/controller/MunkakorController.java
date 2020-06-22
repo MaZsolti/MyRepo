@@ -1,5 +1,7 @@
 package home.szakdolgozat.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,8 @@ public class MunkakorController {
 	@GetMapping("munkakor")
 	public String view(Model model) {
 		model.addAttribute("munkakor", new Munkakor());
+		List<Munkakor> munkakorok = mks.munkakorLista();
+		model.addAttribute("munkakorok", munkakorok);
 		return "munkakor";
 	}
 

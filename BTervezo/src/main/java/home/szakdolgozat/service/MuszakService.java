@@ -13,14 +13,15 @@ public class MuszakService {
 
 	@Autowired
 	private MuszakRepository mr;
-	
-	public void mentes(Muszak muszak) {
+			
+	public void mentes(Muszak muszak, Long munkaido_id) {
 		mr.save(muszak);
 	}
 	
 	public List<Muszak> muszakLista(){
 		return (List<Muszak>)mr.findAll();
 	}
+	
 	
 	
 }

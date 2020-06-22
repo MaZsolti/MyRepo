@@ -3,33 +3,69 @@
 <script th:replace="layouts/nav :: navelement1"></script>
 
 <body class="bg-secondary text-center">
-    <script th:replace="layouts/nav :: navelement2"></script>
-    <div class="container bg-light col-10 col-sm-9 col-md-8 col-lg-7 col-xl-6 mx-auto rounded-bottom text-center">
-        <div class="row">
-            <div class="col">
-                <form action="muszak" th:object="${muszak}" method="POST" class="form-group">
-                    <h3>Műszak hozzáadása</h3>
-                    <div class="form-row">
-                        <div class="col">
-                            <input type="text" th:field="*{szak}" class="form-control mt-2 mb-4" placeholder="Műszak:" >
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col">
-                            <input type="number" th:field="*{tol}" class="form-control mt-2 mb-4" placeholder="tól:" id="tol" name="tol">
-                        </div>
-                        <div class="col">
-                            <input type="number" th:field="*{ig}" class="form-control mt-2 mb-4" placeholder="ig:" id="ig" name="ig">
-                        </div>
-                    </div>
+	<script th:replace="layouts/nav :: navelement2"></script>
+	<div
+		class="container bg-light col-10 col-sm-9 col-md-8 col-lg-7 col-xl-6 mx-auto rounded-bottom text-center">
+		<div class="row">
+			<div class="col">
+				<form action="muszak" th:object="${muszak}" method="POST"
+					class="form-group">
+					<h3>Műszak hozzáadása</h3>
+					<div class="form-row">
+						<div class="col">
+							<input type="text" th:field="*{szak}"
+								class="form-control mt-2 mb-4" placeholder="Műszak:">
+						</div>
+					</div>
+					<div class="form-group row">
+
+						<div class="d-block col-12 mx-auto mb-4 rounded">
+
+							<select class="form-control form-control-sm" th:field="*{ido}">
+								<option value="">Kérem válassza ki a műszak időtartamát</option>
+								<option th:each="munkaidok : ${munkaidok}"
+									th:value="${munkaidok.munkaido_id}"
+									th:text="${munkaidok.idotartam} + ' óra'"></option>
+							</select>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="col">
+							<input type="number" th:field="*{tol}"
+								class="form-control mt-2 mb-4" placeholder="tól:" id="tol"
+								name="tol">
+						</div>
+						<div class="col">
+							<input type="number" th:field="*{ig}"
+								class="form-control mt-2 mb-4" placeholder="ig:" id="ig"
+								name="ig">
+						</div>
+					</div>
 
 
-                    <button class="btn btn-dark" type="submit">Hozzáadás</button>
-                </form>
-                </form>
-            </div>
-        </div>
-    </div>
+					<button class="btn btn-dark" type="submit">Hozzáadás</button>
+				</form>
+
+			</div>
+			<div class="col-5 mt-6">
+				<table class="table table-bodered">
+					<thead>
+						<th>Műszak</th>
+						<th>ideje</th>
+						<th>kezdete</th>
+						<th>vége</th>
+					</thead>
+					<tr th:each="muszakok : ${muszakok}">
+						<td th:text="${muszakok.szak}">Műszak</td>
+						<td th:text="${muszakok.ido.idotartam} +' óra'">Munkaidő</td>
+						<td th:text="${muszakok.tol} +'-tól' ">-tól</td>
+						<td th:text="${muszakok.ig} +'-ig' ">-ig</td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

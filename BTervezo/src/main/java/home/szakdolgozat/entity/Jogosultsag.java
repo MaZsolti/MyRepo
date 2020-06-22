@@ -15,19 +15,19 @@ public class Jogosultsag {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long jog_id;
 	
 	private Integer jogok;
 	
 	@OneToMany(cascade =CascadeType.ALL, mappedBy ="jogosultsag")
 	private List<Dolgozo> dolgozok = new ArrayList<Dolgozo>();
 
-	public Long getId() {
-		return id;
+	public Long getJog_id() {
+		return jog_id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setJog_id(Long jog_id) {
+		this.jog_id = jog_id;
 	}
 
 	public Integer getJogok() {
@@ -49,11 +49,9 @@ public class Jogosultsag {
 	@Override
 	public String toString() {
 		final int maxLen = 10;
-		return "Jogosultsag [id=" + id + ", jogok=" + jogok + ", dolgozok="
+		return "Jogosultsag [jog_id=" + jog_id + ", jogok=" + jogok + ", dolgozok="
 				+ (dolgozok != null ? dolgozok.subList(0, Math.min(dolgozok.size(), maxLen)) : null) + "]";
 	}
 
-	
-	
 	
 }

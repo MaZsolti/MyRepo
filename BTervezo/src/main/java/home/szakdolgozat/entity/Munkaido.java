@@ -1,8 +1,8 @@
 package home.szakdolgozat.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,22 +18,19 @@ public class Munkaido {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long munkaido_id;
 	
 	private Integer idotartam;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "munkaido")
-	private List<Dolgozo> dolgozok;
-	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "mido")
-	private List<Munkarend> munkarendek;
+	@OneToMany(mappedBy = "ido")
+	private List<Muszak> muszakok = new ArrayList<Muszak>();
 
-	public Long getId() {
-		return id;
+	public Long getMunkaido_id() {
+		return munkaido_id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setMunkaido_id(Long munkaido_id) {
+		this.munkaido_id = munkaido_id;
 	}
 
 	public Integer getIdotartam() {
@@ -44,32 +41,20 @@ public class Munkaido {
 		this.idotartam = idotartam;
 	}
 
-	public List<Dolgozo> getDolgozok() {
-		return dolgozok;
+	public List<Muszak> getMuszakok() {
+		return muszakok;
 	}
 
-	public void setDolgozok(List<Dolgozo> dolgozok) {
-		this.dolgozok = dolgozok;
-	}
-
-	public List<Munkarend> getMunkarendek() {
-		return munkarendek;
-	}
-
-	public void setMunkarendek(List<Munkarend> munkarendek) {
-		this.munkarendek = munkarendek;
+	public void setMuszakok(List<Muszak> muszakok) {
+		this.muszakok = muszakok;
 	}
 
 	@Override
 	public String toString() {
 		final int maxLen = 10;
-		return "Munkaido [id=" + id + ", idotartam=" + idotartam + ", dolgozok="
-				+ (dolgozok != null ? dolgozok.subList(0, Math.min(dolgozok.size(), maxLen)) : null) + ", munkarendek="
-				+ (munkarendek != null ? munkarendek.subList(0, Math.min(munkarendek.size(), maxLen)) : null) + "]";
+		return "Munkaido [munkaido_id=" + munkaido_id + ", idotartam=" + idotartam + ", muszakok="
+				+ (muszakok != null ? muszakok.subList(0, Math.min(muszakok.size(), maxLen)) : null) + "]";
 	}
 
-	
-	
-	
 	
 }

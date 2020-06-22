@@ -14,7 +14,7 @@ public class MTeruletService {
 	@Autowired
 	private MTeruletRepository mtr;
 	
-	public void mentes(MTerulet mterulet, Long munkarend_id) {
+	public void mentes(MTerulet mterulet) {
 		mtr.save(mterulet);
 	}
 	public List<MTerulet> munkateruletLista(){

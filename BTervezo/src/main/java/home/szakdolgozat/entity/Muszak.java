@@ -1,14 +1,11 @@
 package home.szakdolgozat.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Muszak {
@@ -19,26 +16,29 @@ public class Muszak {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long muszak_id;
 	private String szak;
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Munkaido ido;
 	private int tol;
 	private int ig;
-
-	@ManyToMany
-	private List<MTerulet> mteruletek = new ArrayList<MTerulet>();
-	@ManyToMany(cascade = CascadeType.ALL, mappedBy = "muszakok")
-	private List<Dolgozo> dolgozok = new ArrayList<Dolgozo>();
-	public Long getId() {
-		return id;
+	public Long getMuszak_id() {
+		return muszak_id;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setMuszak_id(Long muszak_id) {
+		this.muszak_id = muszak_id;
 	}
 	public String getSzak() {
 		return szak;
 	}
 	public void setSzak(String szak) {
 		this.szak = szak;
+	}
+	public Munkaido getIdo() {
+		return ido;
+	}
+	public void setIdo(Munkaido ido) {
+		this.ido = ido;
 	}
 	public int getTol() {
 		return tol;
@@ -52,25 +52,11 @@ public class Muszak {
 	public void setIg(int ig) {
 		this.ig = ig;
 	}
-	public List<MTerulet> getMteruletek() {
-		return mteruletek;
-	}
-	public void setMteruletek(List<MTerulet> mteruletek) {
-		this.mteruletek = mteruletek;
-	}
-	public List<Dolgozo> getDolgozok() {
-		return dolgozok;
-	}
-	public void setDolgozok(List<Dolgozo> dolgozok) {
-		this.dolgozok = dolgozok;
-	}
 	@Override
 	public String toString() {
-		final int maxLen = 10;
-		return "Muszak [id=" + id + ", szak=" + szak + ", tol=" + tol + ", ig=" + ig + ", mteruletek="
-				+ (mteruletek != null ? mteruletek.subList(0, Math.min(mteruletek.size(), maxLen)) : null)
-				+ ", dolgozok=" + (dolgozok != null ? dolgozok.subList(0, Math.min(dolgozok.size(), maxLen)) : null)
+		return "Muszak [muszak_id=" + muszak_id + ", szak=" + szak + ", ido=" + ido + ", tol=" + tol + ", ig=" + ig
 				+ "]";
 	}
-
+	
+	
 }

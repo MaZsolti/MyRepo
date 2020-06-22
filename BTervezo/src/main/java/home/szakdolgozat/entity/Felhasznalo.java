@@ -1,9 +1,6 @@
 package home.szakdolgozat.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 @Entity
 public class Felhasznalo extends Dolgozo{
@@ -11,21 +8,9 @@ public class Felhasznalo extends Dolgozo{
 	private Felhasznalo () {
 		
 	}
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
+		
 	private String felhasznalonev;
 	private String jelszo;
-	
-	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getFelhasznalonev() {
 		return felhasznalonev;
 	}
@@ -40,10 +25,10 @@ public class Felhasznalo extends Dolgozo{
 	}
 	@Override
 	public String toString() {
-		return "Felhasznalo [id=" + id + ", felhasznalonev=" + felhasznalonev + ", jelszo=" + jelszo + "]";
+		return "Felhasznalo [felhasznalonev=" + felhasznalonev + ", jelszo=" + jelszo + "]";
 	}
 	
 	
 	
-	
+		
 }
